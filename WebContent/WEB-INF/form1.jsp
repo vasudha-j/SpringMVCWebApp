@@ -1,0 +1,4 @@
+<html>
+
+${name}  {$place }
+</html>

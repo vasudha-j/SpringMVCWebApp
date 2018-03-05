@@ -1,10 +1,15 @@
 package com.vasudha.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+
 
 /**
  * @author VJ
@@ -14,11 +19,18 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 @Controller
 public class HelloWorldController {
 	
-	@RequestMapping("/welcome/country/{countryName}")
-	public ModelAndView helloWorld(@PathVariable("countryName") String countryName){
+	@RequestMapping("/welcome")
+	public ModelAndView helloWorld( ){
 		ModelAndView model = new ModelAndView("HelloPage");
 
-		model.addObject("msg", "hi"+countryName);
+		model.addObject("f1", "hi");
+		model.addObject("f2", "hi");
+		model.addObject("f3", "hi");
+		model.addObject("f4", "hi");
+		model.addObject("f5", "hi");
+		model.addObject("f6", "hi");
+		model.addObject("f7", "hi");
+
 		return model;
 		
 	}
@@ -27,4 +39,43 @@ public class HelloWorldController {
 	        configurer.enable();
 	}
 	
+	@RequestMapping(value="/form2.html" , method = RequestMethod.GET)
+	public ModelAndView getAdmissionForm(){
+		
+		ModelAndView model = new ModelAndView("form2");
+		return model;
+		
+	}
+	
+	@RequestMapping(value="/form1.html" , method = RequestMethod.POST)
+	public ModelAndView updateRecords(@RequestParam("name") String name, @RequestParam("place") String place){
+		
+		ModelAndView model = new ModelAndView("form1");
+
+		model.addObject("name", "Updated name as  : "+ name + ", and place as : " + place);
+		return model;
+		
+	}
+	
+//	@RequestMapping(value="/form2.html" , method = RequestMethod.POST)
+//	public ModelAndView updateRecordsWithMap(@RequestParam Map<String,String> reqPar){
+//		String name = reqPar.get("name");
+//		String place = reqPar.get("place");
+//		
+//		ModelAndView model = new ModelAndView("AdmissionSuccess");
+//
+//		model.addObject("msg", "Updated name as  : "+ name + ", and place as : " + place);
+//		return model;
+//		
+//	}
+	
+//	@RequestMapping(value="/form2.html" , method = RequestMethod.POST)
+//	public ModelAndView getRecords(@RequestParam("name") String name, @RequestParam("place") String place){
+//		
+//		ModelAndView model = new ModelAndView("AdmissionSuccess");
+//
+//		model.addObject("msg", "Records Name "+ name + ", Place : " + place);
+//		return model;
+		
+//	}
 }
