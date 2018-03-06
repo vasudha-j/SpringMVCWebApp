@@ -13,13 +13,12 @@
 <li style="color:white;"> ${f6}</li>
 </ol>
 <h3 style="color: #2e6c80;">&nbsp&nbsp  Database Actions:</h3>
-<ol style="list-style: none; font-size: 14px; line-height: 32px; font-weight: bold;">
-<li style="color:white;"><a href="">Insert</a></li>
-<li style="color:white;"> Delete</li>
-<li style="color:white;"> Create</li>
-<li style="color:white;">Update</li>
-<li style="color:white;"> Get records</li>
-</ol>
+<ol style="list-style: "color:white"; font-size: 14px; line-height: 32px; font-weight: bold;">
+<h4 style="color: white; font-size: 14px;line-height: 32px; font-weight: bold;">
+The Spring framework supports for DAO includes a consistent exception hierarchy and a convenient translation from data access API-specific exceptions to the Spring DAO exception hierarchy.
+
+The Spring framework provides a solutions for the various problems identified by using JDBC as low-level data access API for implementing DAO, by giving thin, robust and highly extensible JDBC abstraction framework.
+</h4>
 </center>
 </body>
 </html>

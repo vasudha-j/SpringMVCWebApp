@@ -23,13 +23,13 @@ public class HelloWorldController {
 	public ModelAndView helloWorld( ){
 		ModelAndView model = new ModelAndView("HelloPage");
 
-		model.addObject("f1", "hi");
-		model.addObject("f2", "hi");
-		model.addObject("f3", "hi");
-		model.addObject("f4", "hi");
-		model.addObject("f5", "hi");
-		model.addObject("f6", "hi");
-		model.addObject("f7", "hi");
+		model.addObject("f1", "Spring is light weight and It minimally invasive development with POJO");
+		model.addObject("f2", "Spring achieves the loose coupling through dependency injection and interface based programming.");
+		model.addObject("f3", "Declarative programming through aspects and common conventions.");
+		model.addObject("f4", "Boilerplate reduction through aspects and templates.");
+//		model.addObject("f5", "hi");
+//		model.addObject("f6", "hi");
+//		model.addObject("f7", "hi");
 
 		return model;
 		
@@ -78,4 +78,5 @@ public class HelloWorldController {
 //		return model;
 		
 //	}
+	
 }
