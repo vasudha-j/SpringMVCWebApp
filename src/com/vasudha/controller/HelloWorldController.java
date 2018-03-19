@@ -1,6 +1,8 @@
 package com.vasudha.controller;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,15 +24,45 @@ public class HelloWorldController {
 	@RequestMapping("/welcome")
 	public ModelAndView helloWorld( ){
 		ModelAndView model = new ModelAndView("HelloPage");
+		
+		
+		String f1 = "a";
+		String f2 =  "a";
+		String f3 =  "a";
+		String f4 =  "a";
+		String f5 =  "a";
+		String f6 =  "a";
+		Map<POJO, String> rows = new HashMap<POJO, String>();
+		
+		String f7 = "";
+		
+		int i = 1;
+		
+		while(i < 5){
+			POJO val = new POJO();
+			val.setValue(i);
+			String rowNumber = String.valueOf(val.getValue());
+			rows.put(val, rowNumber);
+			
+			i++;
+		}
+		
+		
+		
+		for(Entry<POJO, String> entry : rows.entrySet()) {
+		   
+		    String value = entry.getValue();
+		    f7 = f7 + "<td>" + value + "</td>";
+		}
+	
 
-		model.addObject("f1", "Spring is light weight and It minimally invasive development with POJO");
-		model.addObject("f2", "Spring achieves the loose coupling through dependency injection and interface based programming.");
-		model.addObject("f3", "Declarative programming through aspects and common conventions.");
-		model.addObject("f4", "Boilerplate reduction through aspects and templates.");
-//		model.addObject("f5", "hi");
-//		model.addObject("f6", "hi");
-//		model.addObject("f7", "hi");
+		model.addObject("f1", f1);
+		model.addObject("f2", f2);
+		model.addObject("f3", f3);
+		model.addObject("f4", f4);
+		model.addObject("rows",  f7);
 
+		System.out.println("rows value ois " + f7);
 		return model;
 		
 	}
